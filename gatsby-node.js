@@ -18,11 +18,15 @@ exports.sourceNodes = (
     proxy_feature.fid = feature.fid;
     proxy_feature.defn = feature.defn;
     proxy_feature.featureFields = feature.fields.toObject();
+    proxy_feature.geometry = feature.getGeometry().toObject();
+
+    console.log(proxy_feature);
 
 		const nodeId = createNodeId(`geo-${feature.fid}`)
 		const nodeContent = JSON.stringify(proxy_feature)
 		const nodeData = Object.assign({}, proxy_feature, {
 			id: nodeId,
+      geometry: proxy_feature.geometry,
       featureFields: proxy_feature.featureFields,
 			parent: null,
 			children: [],

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-geo",
   "version": "0.0.1",
-  "description": "A source plugin for Gatsby to use geo data",
+  "description": "Gatsby source plugin for publishing geospatial data to the web",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,12 @@
   "keywords": [
     "geospatial",
     "geo",
+    "maps",
+    "mapping",
+    "gatsby-plugin",
     "gatsby"
   ],
-  "author": "Andrew Larcombe",
+  "author": "Andrew Larcombe <andrew@andrewl.net> (http://www.andrewl.net)",
   "license": "MIT",
   "dependencies": {
     "gdal": "^0.9.8"
