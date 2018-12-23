@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-geo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gatsby source plugin for publishing geospatial data to the web",
   "main": "index.js",
   "scripts": {
