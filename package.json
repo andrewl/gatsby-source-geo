@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-geo",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Gatsby source plugin for publishing geospatial data to the web",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,12 @@
     "gatsby"
   ],
   "author": "Andrew Larcombe <andrew@andrewl.net> (http://www.andrewl.net)",
-  "license": "MIT",
-  "dependencies": {
-    "gdal": "^0.9.8"
-  }
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/andrewl/gatsby-source-geo.git"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"gdal": "^0.9.8"
+	}
 }

@@ -3,11 +3,11 @@
 Plugin for creating `GeoFeature` nodes from geospatial data sources.
 Uses the node-gdal for accessing underlying data
 
-Under development and Only lightly tested on GeoJSON files
+Under development and only lightly tested on GeoJSON files
 
 ## Install
 
-`npm install --save gatsby-source-geo`
+`npm i gatsby-source-geo gdal`
 
 ## How to use
 
@@ -27,7 +27,7 @@ module.exports = {
 
 ## Options
 
-path - it's just the location of the spatial file
+path - it's just the location of the geospatial data file (eg /tmp/myfile.geojson)
 
 ## How to query
 
