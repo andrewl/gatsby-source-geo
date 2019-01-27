@@ -1,6 +1,6 @@
 # gatsby-source-geo
 
-Plugin for creating `GeoFeature` nodes from geospatial data sources. Each feature in the geospatial data source becomes a node that can be published, or referenced or whatever in graphql.
+Plugin for creating nodes from geospatial data sources. Each layer is exposed as a `GeoLayer` node, each geographic feature a `GeoFeature` - each of these nodes can be published, or referenced or whatever in graphql.
 
 Uses the node-gdal module for accessing underlying geospatial data sources.
 
@@ -28,35 +28,48 @@ module.exports = {
 }
 ```
 
-//@todo - add support for specific layers, defaulting to the first layer
-in a feature
-
 ## Options
 
 path - it's just the location of the geospatial data file (eg /tmp/myfile.geojson)
 
 ## How to query
 
-You can query GeoFeature nodes from geospatial featues in the following way:
+You can query GeoLayer nodes from geospatial data in the following way:
 
 ```graphql
 {
-  allGeoFeature {
-    edges {
-      node {
-        id
-        geometry {
-          type
-          coordinates
-        }
-        featureFields {
-          my_first_field
-          my_second_field
-          etc
-        }
-      }
-    }
-  }
+	allGeoLayer {
+		edges {
+			node {
+				id
+				name
+				srs_wkt
+			}
+		}
+	}
+}
+```
+
+You can query GeoFeature nodes from geospatial data in the following way:
+
+```graphql
+{
+	allGeoFeature {
+		edges {
+			node {
+				id
+					geometry {
+						type
+							coordinates
+					}
+				featureFields {
+					my_first_field
+						my_second_field
+						etc
+				}
+			}
+		}
+	}
 }
 ```
 
