@@ -4,8 +4,6 @@ Plugin for creating nodes from geospatial data sources. Each layer is exposed as
 
 Uses the node-gdal module for accessing underlying geospatial data sources.
 
-Under development and only lightly tested on GeoJSON files
-
 ## Install
 
 You'll need to install both this module and the gdal module.
@@ -22,6 +20,16 @@ module.exports = {
       resolve: `gatsby-source-geo`,
       options: {
         path: `${__dirname}/data/myfile.geojson`,
+        // optional per layer filters
+        layers: [
+          {
+            //name of the layer to filter
+            name: `some_layer`,
+
+            //partial WHERE query to filter by attribute
+            attribute_filter: `some_field = 'somevalue'`,
+          }
+        ],
       },
     },
   ],
