@@ -26,7 +26,6 @@ exports.sourceNodes = (
       parent: null,
       children: [],
       internal: {
-        parent: null,
         type: `geoLayer`,
 				content: nodeContent,
         contentDigest: createContentDigest(proxy_layer),
@@ -65,7 +64,6 @@ exports.sourceNodes = (
       parent: null,
       children: [],
       internal: {
-        parent: null,
         type: `geoFeature`,
         content: nodeContent,
         contentDigest: createContentDigest(proxy_feature),
@@ -106,6 +104,9 @@ exports.sourceNodes = (
       console.log("Skipping layer " + layer.name);
     }
     else {
+      console.log("Including layer " + layer.name);
+      console.log("WKT = " + layer.srs.toWKT());
+      console.log("Proj4 = " + layer.srs.toProj4());
       const layerNode = processLayer(layer);
       createNode(layerNode);
       layer.features.forEach(function(feature) {
